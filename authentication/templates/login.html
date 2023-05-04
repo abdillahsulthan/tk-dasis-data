@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+<title>BaBaDu | Login</title>
+{% endblock meta %}
+
+{% block content %}
+  <h1>Page Login</h1>
+  <button><a href="{% url 'atlet:dashboard_atlet' %}">Login</a></button>
+{% endblock content %}
