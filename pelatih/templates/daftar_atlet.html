@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+<title>BaBaDu | Pelatih</title>
+<style>
+    .fixedwidth {
+        min-width: 120px;
+        max-width: 120px;
+    }   
+</style>
+{% endblock meta %}
+
+{% block content %}
+<section class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <div class="mb-md-5 mt-md-4">
+                <h2 class="fw-bold mb-2 text-uppercase">Daftar Atlet</h2>
+                <p class="text-white-50 mb-4">Silahkan pilih atlet yang ingin anda daftarkan!<p>
+                <div class="dropdown show mb-4">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Atlet yang dipilih...
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Abdillah Sulthan</a>
+                        <a class="dropdown-item" href="#">Adly Renadi</a>
+                        <a class="dropdown-item" href="#">Rafli Wasis Anggito</a>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-lg btn-outline-secondary" type="submit">Submit</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}
