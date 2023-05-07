@@ -57,5 +57,17 @@
         </div>
     </section>
   </body>
+  <script>
+     $(function(){
+
+        $(".dropdown-menu a").click(function(){
+
+            $("#dropdownMenuButton").text($(this).text());
+            $("#dropdownMenuButton").val($(this).text());
+
+        });
+
+    });
+  </script>
   {% endblock content %}
 </html>
