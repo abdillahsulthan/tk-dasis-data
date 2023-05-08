@@ -1,0 +1,133 @@
+{% include 'navbar.html' %}
+{% block content %}
+{% load static %}
+
+{% block meta %}
+<title>Atlet | Daftar Event</title>
+{% endblock meta %}
+
+{% block content %}
+<section class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-10">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <div class="mb-md-5 mt-md-4">
+                <h2 class="fw-bold mb-4 text-uppercase">Daftar Event</h2>
+                <table class="table table-dark">
+                    <thead class="thead">
+                        <tr>
+                        <th scope="col">Nama Stadium</th>
+                        <th scope="col">Negara</th>
+                        <th scope="col">Kapasitas</th>
+                        <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>GBK</td>
+                        <td>Indonesia</td>
+                        <td>8</td>
+                        <td><button onclick="pilihKategori('GBK', 'Indonesia')">Pilih</button></td>
+                        </tr>
+                        <tr>
+                        <td>Senayan</td>
+                        <td>Indonesia</td>
+                        <td>16</td>
+                        <td><button onclick="pilihKategori('Senayan', 'Indonesia')">Pilih</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 class="fw-bold mb-4 text-uppercase">Daftar Event</h2>
+                <table class="table table-dark">
+                    <thead class="thead">
+                        <tr>
+                        <th scope="col">Nama Event</th>
+                        <th scope="col">Total Hadiah</th>
+                        <th scope="col">Tanggal Mulai</th>
+                        <th scope="col">Kategori</th>
+                        <th scope="col">Kapasitas</th>
+                        <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>EventA</td>
+                        <td>Rp 5.000.000</td>
+                        <td>12-04-2023</td>
+                        <td>S200</td>
+                        <td>3/8</td>
+                        <td><button onclick="pilihKategori('EventA', 'Rp 5.0000.000', '12-04-2023', 'S200', '3/8', 'GBK', 'Indonesia')">Pilih</button></td>
+                        </tr>
+                        <tr>
+                        <td>EventB</td>
+                        <td>Rp 4.000.000</td>
+                        <td>27-04-2023</td>
+                        <td>S100</td>
+                        <td>8/8</td>
+                        <td><button onclick="pilihKategori('EventB', 'Rp 4.000.000', '27-04-2023', 'S100', '8/8', 'GBK', 'Indonesia')">Pilih</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 class="fw-bold mb-4 text-uppercase">Pilih Kategori</h2>
+                <script>
+                    function pilihKategori(namaEvent, totalHadiah, tanggalMulai, kategori, kapasitas, stadium, negara) {
+                      var url = 'pilih_kategori.html?' +
+                                'Nama Event:' + encodeURIComponent(namaEvent) +
+                                '&TotalHadiah:' + encodeURIComponent(totalHadiah) +
+                                '&Tanggal Mulai:' + encodeURIComponent(tanggalMulai) +
+                                '&kategori:' + encodeURIComponent(kategori) +
+                                '&Kapasitas:' + encodeURIComponent(kapasitas) +
+                                '&Stadium:' + encodeURIComponent(stadium) +
+                                '&Negara:' + encodeURIComponent(negara);
+                      window.location.href = url;
+                    }
+                </script>
+                <table class="table table-dark">
+                    <thead class="thead">
+                        <tr>
+                        <th scope="col">Kategori/th>
+                        <th scope="col">Partner</th>
+                        <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>Tunggal Putra</td>
+                        <td>-</td>
+                        <td><button onclick="pilihKategori('GBK', 'Indonesia')">Join</button></td>
+                        </tr>
+                        <tr>
+                        <td>Ganda Putra</td>
+                        <td>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Abdillah Sulthan</a>
+                                <a class="dropdown-item" href="#">Adly Renadi</a>
+                                <a class="dropdown-item" href="#">Rafli Wasis Anggito</a>
+                            </div>
+                        </td>
+                        <td><button onclick="pilihKategori('Senayan', 'Indonesia')">Join</button></td>
+                        </tr>
+                        <td>Ganda Campuran</td>
+                        <td>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Jessica Jane</a>
+                                <a class="dropdown-item" href="#">Renata</a>
+                                <a class="dropdown-item" href="#">Women</a>
+                            </div>
+                        </td>
+                        <td><button onclick="pilihKategori('Senayan', 'Indonesia')">Join</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}
